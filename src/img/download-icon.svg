@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 25" width="26" height="25">
+	<title>Скачать</title>
+	<defs>
+		<image  width="155" height="46" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJsAAAAuBAMAAADNSHZ5AAAAAXNSR0IB2cksfwAAACdQTFRFAAAAXFxcW1tbW1tbXFxcRIsoQo0mQo0mQY4lNW4gKU4bEBAQHS8WoHj6WwAAAA10Uk5TAIC//0BAgP+//////3dKdQsAAADzSURBVHicY2RUEmCgFvh3nlFI7wDVjHM6x2hyhmqmMbDIMBpcoJ5xDAajxo0aN4DGsQbARH5voIJx6fBygLGDcuNYixBCLxdQbBxbIW2MU3hANeOY/zIwO+ylmnGhty+Y/LlALeOYnf4dcNpNtbAz+aPyQGYDtYwDBhurPqigp45xJjIbmAzOUc041dtQoUGcjKlv3E0KihRYiVKOEOok3zS4cREGQOL/R2AxdXc2FYwDg3DOBRQYNZSMA9YWQv8+UFZVIBnX/gFM/ZxAHePCIJXPrwXUMY4qYNS4UeOINE7lDvVMY9GhdieK0YhqpjG8uw8AzeB6H4vEpKMAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="-10" y="-11"/>
+</svg>

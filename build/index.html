@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+
+	<title>ElcorePLC</title>
+
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+	<header class="header">
+    <div class="container">
+        <div class="header__top">
+            <ul class="social">
+                <li>
+                    <a href="https://web.telegram.org/" target="_blank">
+                        <svg class="social__icon social__icon--blue" width="21" height="17" viewBox="0 0 21 17"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15.6128 16.7382C15.4524 16.6518 14.336 15.8585 13.132 14.9754C11.9279 14.0922 10.8885 13.3696 10.8223 13.3696C10.756 13.3696 10.1329 13.9086 9.43751 14.5673C8.53805 15.4193 8.109 15.779 7.9507 15.8136C7.82832 15.8403 7.70256 15.8355 7.67123 15.8028C7.63991 15.7701 7.6879 14.7098 7.77789 13.4465C7.93529 11.2369 7.94771 11.1438 8.10493 10.9944C8.19482 10.909 10.0999 9.19804 12.3385 7.19225C14.577 5.18646 16.482 3.46581 16.5716 3.36859C16.7201 3.20762 16.7248 3.18197 16.624 3.08172C16.5336 2.99177 16.4751 2.98598 16.3045 3.05008C16.1896 3.09322 13.683 4.63949 10.7343 6.48624C7.78553 8.33298 5.33435 9.84395 5.28718 9.84395C5.08277 9.84395 0.46211 8.36478 0.303571 8.24859C0.0684226 8.07626 -0.0477458 7.83328 0.0183926 7.65213C0.132554 7.33944 0.640217 7.07571 2.48239 6.37208C3.5033 5.98214 5.807 5.09966 7.60171 4.41101C19.0245 0.0279718 19.0995 0 19.429 0C19.8259 0 20.1102 0.24411 20.2304 0.688156C20.3293 1.05341 20.3846 0.758231 19.005 7.22588C18.7511 8.41623 18.2267 10.8792 17.8397 12.6992C17.4527 14.5192 17.0873 16.1294 17.0277 16.2775C16.7872 16.8756 16.2141 17.0622 15.6128 16.7382V16.7382Z"
+                                fill="#5B5B5B" />
+                        </svg>
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://dzen.ru/" target="_blank">
+                        <svg class="social__icon social__icon--black" width="18" height="17" viewBox="0 0 18 17"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_82_241)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8.61709 0C5.13235 0 2.7388 0 1.50682 1.23198C0.274841 2.46395 0.274841 4.99831 0.274841 8.34225C4.00597 8.23665 5.73074 8.13105 7.10352 6.79347C8.40589 5.4559 8.51149 3.73113 8.61709 0Z"
+                                    fill="#5B5B5B" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.50682 15.6637C0.274841 14.4317 0.274841 11.8974 0.274841 8.55344C4.00597 8.65903 5.73074 8.76463 7.10352 10.1022C8.44109 11.475 8.54669 13.1645 8.65229 16.9309C5.13235 16.8957 2.7388 16.8957 1.50682 15.6637Z"
+                                    fill="#5B5B5B" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8.82831 16.8957C8.93391 13.1646 9.0395 11.4398 10.3771 10.067C11.7499 8.72945 13.4394 8.62385 17.2058 8.51825C17.2058 11.8974 17.2058 14.3965 15.9738 15.6637C14.7066 16.8957 12.313 16.8957 8.82831 16.8957Z"
+                                    fill="#5B5B5B" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8.82831 0C8.93391 3.73113 9.0395 5.4559 10.3771 6.82867C11.7499 8.16625 13.4394 8.27185 17.2058 8.37745C17.2058 4.99831 17.2058 2.49915 15.9738 1.23198C14.7066 0 12.313 0 8.82831 0Z"
+                                    fill="#5B5B5B" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_82_241">
+                                    <rect width="16.8957" height="16.8957" fill="white"
+                                        transform="translate(0.274841)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.youtube.ru" target="_blank">
+                        <svg class="social__icon social__icon--red" width="19" height="15" viewBox="0 0 19 15"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.3679 2.80493C18.1535 1.97071 17.524 1.316 16.7244 1.09425C15.2749 0.689453 9.46316 0.689453 9.46316 0.689453C9.46316 0.689453 3.65144 0.689453 2.20191 1.09425C1.40229 1.316 0.772801 1.97071 0.558434 2.80493C0.170532 4.31499 0.170532 7.46181 0.170532 7.46181C0.170532 7.46181 0.170532 10.6086 0.558434 12.1187C0.772801 12.9494 1.40229 13.5795 2.20191 13.8012C3.65144 14.206 9.46316 14.206 9.46316 14.206C9.46316 14.206 15.2749 14.206 16.7244 13.8012C17.524 13.5795 18.1535 12.9494 18.3679 12.1187C18.7558 10.6086 18.7558 7.46181 18.7558 7.46181C18.7558 7.46181 18.7558 4.31147 18.3679 2.80493ZM7.56108 10.32V4.60362L12.4167 7.46181L7.56108 10.32Z"
+                                fill="#5B5B5B" />
+                        </svg>
+
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://vk.com/" target="_blank">
+                        <svg class="social__icon social__icon--blue" width="18" height="17" viewBox="0 0 18 17"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.61032 0H11.797C16.5306 0 17.6515 1.12086 17.6515 5.85453V11.0412C17.6515 15.7748 16.5306 16.8957 11.797 16.8957H6.61032C1.87666 16.8957 0.755798 15.7748 0.755798 11.0412V5.85453C0.755798 1.12086 1.87666 0 6.61032 0ZM14.5871 5.81871C14.6706 5.55632 14.5871 5.36556 14.2174 5.36556H12.9893C12.6794 5.36556 12.5363 5.53249 12.4529 5.71142C12.4529 5.71142 11.8208 7.23761 10.9385 8.22736C10.6523 8.5134 10.5212 8.60886 10.3662 8.60886C10.2828 8.60886 10.1755 8.5134 10.1755 8.25118V5.80671C10.1755 5.49684 10.08 5.35374 9.81763 5.35374H7.88612C7.69536 5.35374 7.57608 5.49684 7.57608 5.63978C7.57608 5.93799 8.01723 6.00946 8.06487 6.84411V8.65651C8.06487 9.05001 7.9934 9.12148 7.83847 9.12148C7.42115 9.12148 6.40758 7.58346 5.7995 5.8307C5.68022 5.48485 5.56093 5.35374 5.2509 5.35374H4.01092C3.65324 5.35374 3.5936 5.52067 3.5936 5.69942C3.5936 6.02145 4.01092 7.64293 5.53711 9.78919C6.55068 11.2559 7.9934 12.0427 9.29302 12.0427C10.08 12.0427 10.1755 11.864 10.1755 11.5659V10.4569C10.1755 10.0992 10.247 10.0396 10.4973 10.0396C10.6761 10.0396 10.9981 10.135 11.7255 10.8386C12.5601 11.6732 12.7032 12.0547 13.1682 12.0547H14.3964C14.754 12.0547 14.921 11.8758 14.8257 11.5301C14.7184 11.1843 14.3129 10.6835 13.7883 10.0874C13.5021 9.75354 13.0729 9.38387 12.9416 9.20494C12.7629 8.96654 12.8105 8.87108 12.9416 8.65651C12.9298 8.65651 14.4322 6.53407 14.5871 5.81871Z"
+                                fill="#5B5B5B" />
+                        </svg>
+
+                    </a>
+                </li>
+            </ul>
+
+            <div class="header__top-inner">
+                <nav>
+                    <ul class="header__top-menu">
+                        <li class="header__top-menu-item">
+                            <a href="/" class="header__top-menu-link">
+                                Форум
+                            </a>
+                        </li>
+
+                        <li class="header__top-menu-item">
+                            <a href="/" class="header__top-menu-link">
+                                Поиск
+                            </a>
+                        </li>
+
+                        <li class="header__top-menu-item">
+                            <a href="/" class="header__top-menu-link">
+                                Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <ul class="header__top-profile">
+                    <li>
+                        <button>
+                            <svg width="30" height="31" viewBox="0 0 30 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g filter="url(#filter0_d_117_254)">
+                                    <path
+                                        d="M15 2L18.09 8.26L25 9.27L20 14.14L21.18 21.02L15 17.77L8.82 21.02L10 14.14L5 9.27L11.91 8.26L15 2Z"
+                                        stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_d_117_254" x="-1" y="0" width="32" height="32"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                        <feOffset dy="4" />
+                                        <feGaussianBlur stdDeviation="2" />
+                                        <feComposite in2="hardAlpha" operator="out" />
+                                        <feColorMatrix type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                        <feBlend mode="normal" in2="BackgroundImageFix"
+                                            result="effect1_dropShadow_117_254" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_117_254"
+                                            result="shape" />
+                                    </filter>
+                                </defs>
+                            </svg>
+
+                        </button>
+                    </li>
+
+
+                    <li>
+                        <button>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8 22C8.55228 22 9 21.5523 9 21C9 20.4477 8.55228 20 8 20C7.44772 20 7 20.4477 7 21C7 21.5523 7.44772 22 8 22Z"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M19 22C19.5523 22 20 21.5523 20 21C20 20.4477 19.5523 20 19 20C18.4477 20 18 20.4477 18 21C18 21.5523 18.4477 22 19 22Z"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M2.05078 2.05078H4.05078L6.71078 14.4708C6.80836 14.9256 7.06145 15.3323 7.42649 15.6206C7.79153 15.909 8.24569 16.0611 8.71078 16.0508H18.4908C18.946 16.05 19.3873 15.8941 19.7418 15.6086C20.0964 15.3232 20.3429 14.9253 20.4408 14.4808L22.0908 7.05078H5.12078"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </li>
+
+
+
+                </ul>
+
+                <button class="btn">
+                    Личный кабинет
+                </button>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="header__box">
+        <div class="container">
+            <div class="header__inner">
+                <a href="/" class="logo animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="../../img/logo.svg" alt="logo" width="192" height="32">
+                </a>
+
+                <nav>
+                    <ul class="header__menu">
+                        <li>
+                            <a href="/">
+                                ElcoreStore
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/">
+                                ElcoreCloud
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/">
+                                ElcoreIDE
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/">
+                                Обучение и ресурсы
+                            </a>
+
+
+                        </li>
+
+                        <li>
+                            <a href="/">
+                                Новости и статьи
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+                <img class="header__burger" src="../../img/burger.svg" alt="burger" width="33" height="28">
+
+                <nav class="header__menu-mobile">
+
+                    <ul class="header__menu-mobile-list">
+
+                        <li>
+                            <button>
+                                <svg width="30" height="31" viewBox="0 0 30 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g filter="url(#filter0_d_117_254)">
+                                        <path
+                                            d="M15 2L18.09 8.26L25 9.27L20 14.14L21.18 21.02L15 17.77L8.82 21.02L10 14.14L5 9.27L11.91 8.26L15 2Z"
+                                            stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                        <filter id="filter0_d_117_254" x="-1" y="0" width="32" height="32"
+                                            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                            <feOffset dy="4" />
+                                            <feGaussianBlur stdDeviation="2" />
+                                            <feComposite in2="hardAlpha" operator="out" />
+                                            <feColorMatrix type="matrix"
+                                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                            <feBlend mode="normal" in2="BackgroundImageFix"
+                                                result="effect1_dropShadow_117_254" />
+                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_117_254"
+                                                result="shape" />
+                                        </filter>
+                                    </defs>
+                                </svg>
+
+                            </button>
+                        </li>
+
+
+                        <li>
+                            <button>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8 22C8.55228 22 9 21.5523 9 21C9 20.4477 8.55228 20 8 20C7.44772 20 7 20.4477 7 21C7 21.5523 7.44772 22 8 22Z"
+                                        stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M19 22C19.5523 22 20 21.5523 20 21C20 20.4477 19.5523 20 19 20C18.4477 20 18 20.4477 18 21C18 21.5523 18.4477 22 19 22Z"
+                                        stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M2.05078 2.05078H4.05078L6.71078 14.4708C6.80836 14.9256 7.06145 15.3323 7.42649 15.6206C7.79153 15.909 8.24569 16.0611 8.71078 16.0508H18.4908C18.946 16.05 19.3873 15.8941 19.7418 15.6086C20.0964 15.3232 20.3429 14.9253 20.4408 14.4808L22.0908 7.05078H5.12078"
+                                        stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </li>
+
+                        <li class="header__top-menu-item">
+                            <a href="/" class="header__top-menu-link">
+                                Форум
+                            </a>
+                        </li>
+
+                        <li class="header__top-menu-item">
+                            <a href="/" class="header__top-menu-link">
+                                Поиск
+                            </a>
+                        </li>
+
+                        <li class="header__top-menu-item">
+                            <a href="/" class="header__top-menu-link">
+                                Контакты
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/">
+                                ElcoreStore
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/">
+                                ElcoreCloud
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/">
+                                ElcoreIDE
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/">
+                                Обучение и ресурсы
+                            </a>
+
+
+                        </li>
+
+                        <li>
+                            <a href="/">
+                                Новости и статьи
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="overlay"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header__bottom">
+            <a href="/" class="header__bottom-link">
+                Главная
+            </a>
+
+            <span>/</span>
+
+            <a href="/" class="header__bottom-link">
+                Новости и статья
+            </a>
+        </div>
+    </div>
+
+
+
+</header>
+	<main>
+		<section class="news">
+  <div class="container">
+    <h1 class="news__title animate__animated animate__fadeInRight animate__delay-1.5s">Новости и статьи</h1>
+
+    <div class="news__tabs">
+      <button class="news__tabs-button news__tabs-button--active" data-tab="all">
+        Все новости и статьи
+      </button>
+      <button class="news__tabs-button" data-tab="news">Новости</button>
+      <button class="news__tabs-button" data-tab="articles">Статьи</button>
+    </div>
+
+    <div class="news__tabs-content">
+      <div class="news__tabs-panel news__tabs-panel--active" data-tab-content="all">
+        <div class="news__inner">
+          <a href="/" class="news__link animate__animated animate__fadeInLeft animate__delay-1s" target="_blank">
+            <div class="news__item">
+              <img src="../../img/poster.jpg" alt="poster">
+              <div class="news__item-meta">
+                <time datetime="2024-07-12">12 июля 2024</time>
+                <span>/</span>
+                <span>Новость</span>
+              </div>
+              <h2 class="news__item-title">Новые технологии в сфере автоматизации</h2>
+              <p class="news__item-text">Какие инновации помогут улучшить производственные процессы и повысить
+                эффективность работы предприятий</p>
+            </div>
+
+
+          </a>
+
+
+          <a href="/" class="news__link animate__animated animate__fadeInUp animate__delay-2s" target="_blank">
+            <div class="news__item">
+              <img src="../../img/poster.jpg" alt="poster">
+              <div class="news__item-meta">
+                <span>Статья</span>
+              </div>
+              <h2 class="news__item-title">Влияние цифровизации</h2>
+              <p class="news__item-text">Вызовы и возможности появляются для компаний в результате цифровой
+                трансформации производства</p>
+            </div>
+
+
+          </a>
+
+
+          <a href="/" class="news__link animate__animated animate__fadeInRight animate__delay-3s" target="_blank">
+            <div class="news__item">
+              <img src="../../img/poster.jpg" alt="poster">
+              <div class="news__item-meta">
+                <time datetime="2024-04-24">24 апреля 2024</time>
+                <span>/</span>
+                <span>Новость</span>
+              </div>
+              <h2 class="news__item-title">Устойчивое развитие и ответственность</h2>
+              <p class="news__item-text">Какие методы и технологии помогают снизить негативное влияние производства</p>
+            </div>
+
+
+          </a>
+
+
+
+
+          <a href="/" class="news__link animate__animated animate__fadeInLeft wow" data-wow-offset="100"
+            data-wow-duration="1s" target=" _blank">
+            <div class="news__item">
+              <img src="../../img/poster.jpg" alt="poster">
+              <div class="news__item-meta">
+                <time datetime="2024-07-12">12 июля 2024</time>
+                <span>/</span>
+                <span>Новость</span>
+              </div>
+              <h2 class="news__item-title">Новые технологии в сфере автоматизации</h2>
+              <p class="news__item-text">Какие инновации помогут улучшить производственные процессы и повысить
+                эффективность работы предприятий</p>
+            </div>
+
+
+          </a>
+
+
+
+
+
+          <a href="/" class="news__link animate__animated animate__fadeInUp wow" data-wow-offset="100"
+            data-wow-duration="1.3s" target="_blank">
+            <div class="news__item">
+              <img src="../../img/poster.jpg" alt="poster">
+              <div class="news__item-meta">
+                <time datetime="2024-04-24">24 апреля 2024</time>
+                <span>/</span>
+                <span>Новость</span>
+              </div>
+              <h2 class="news__item-title">Устойчивое развитие и ответственность</h2>
+              <p class="news__item-text">Какие методы и технологии помогают снизить негативное влияние производства</p>
+            </div>
+
+
+          </a>
+
+
+          <a href="/" class="news__link  animate__animated animate__fadeInRight wow" data-wow-offset="100"
+            data-wow-duration="1.6s" target="_blank">
+            <div class="news__item">
+              <img src="../../img/poster.jpg" alt="poster">
+              <div class="news__item-meta">
+                <span>Статья</span>
+              </div>
+              <h2 class="news__item-title">Влияние цифровизации</h2>
+              <p class="news__item-text">Вызовы и возможности появляются для компаний в результате цифровой
+                трансформации производства</p>
+            </div>
+
+
+          </a>
+
+
+          <a href="/" class="news__link animate__animated animate__fadeInLeft wow" data-wow-offset="150"
+            data-wow-duration="1.9s" target="_blank">
+            <div class="news__item">
+              <img src="../../img/poster.jpg" alt="poster">
+              <div class="news__item-meta">
+                <span>Статья</span>
+              </div>
+              <h2 class="news__item-title">Влияние цифровизации</h2>
+              <p class="news__item-text">Вызовы и возможности появляются для компаний в результате цифровой
+                трансформации производства</p>
+            </div>
+
+
+          </a>
+
+
+          <a href="/" class="news__link animate__animated animate__fadeInUp wow" data-wow-offset="150"
+            data-wow-duration="2.2s" target="_blank">
+            <div class="news__item">
+              <img src="../../img/poster.jpg" alt="poster">
+              <div class="news__item-meta">
+                <time datetime="2024-04-24">24 апреля 2024</time>
+                <span>/</span>
+                <span>Новость</span>
+              </div>
+              <h2 class="news__item-title">Устойчивое развитие и ответственность</h2>
+              <p class="news__item-text">Какие методы и технологии помогают снизить негативное влияние производства</p>
+            </div>
+
+
+          </a>
+
+
+          <a href="/" class="news__link animate__animated animate__fadeInRight wow" data-wow-offset="150"
+            data-wow-duration="2.4s" target="_blank">
+            <div class="news__item">
+              <img src="../../img/poster.jpg" alt="poster">
+              <div class="news__item-meta">
+                <time datetime="2024-07-12">12 июля 2024</time>
+                <span>/</span>
+                <span>Новость</span>
+              </div>
+              <h2 class="news__item-title">Новые технологии в сфере автоматизации</h2>
+              <p class="news__item-text">Какие инновации помогут улучшить производственные процессы и повысить
+                эффективность работы предприятий</p>
+            </div>
+
+
+          </a>
+
+        </div>
+      </div>
+      <div class="news__tabs-panel" data-tab-content="news">
+
+      </div>
+      <div class="news__tabs-panel" data-tab-content="articles">
+
+      </div>
+    </div>
+
+
+    <nav class="news__pagination">
+      <button class="news__pagination-arrow news__pagination-arrow--prev" aria-label="Предыдущая страница">
+        <img src="../../img/arrow-left.svg" alt="arrow-left" width="8" height="14">
+
+      </button>
+      <ul class="news__pagination-list">
+        <li><a href="#" class="news__pagination-link news__pagination-link--active">1</a></li>
+        <li><a href="#" class="news__pagination-link ">2</a></li>
+        <li><a href="#" class="news__pagination-link ">3</a></li>
+        <li><a href="#" class="news__pagination-link ">4</a></li>
+        <li><span class="news__pagination-dots">…</span></li>
+        <li><a href="#" class="news__pagination-link">11</a></li>
+      </ul>
+      <button class="news__pagination-arrow news__pagination-arrow--next" aria-label="Следующая страница">
+        <img src="../../img/arrow-right.svg" alt="arrow-right" width="8" height="14">
+
+      </button>
+    </nav>
+
+  </div>
+
+
+</section>
+	</main>
+	<footer class="footer">
+
+  <div class="footer__box">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__left">
+          <a href="/" class="logo footer__logo">
+            <img src="../../img/logo.svg" alt="logo" width="192" height="32">
+          </a>
+
+          <p class="footer__process">
+            Платформа для автоматизации
+            ваших процессов
+          </p>
+
+          <a href="/" class="footer__download">
+            <img src="../../img/download-icon.svg" alt="download" width="23" height="22">
+            <img src="../../img/download-txt.svg" alt="">
+
+          </a>
+
+          <p class="footer__policy">
+            © ООО «НПО «Фарватер» 2024
+          </p>
+        </div>
+
+        <div class="footer__right">
+          <div class="footer__col">
+            <h3 class="footer__col-title">Платформа</h3>
+            <ul class="footer__col-list">
+              <li class="footer__col-list-item">
+                <a href="/">ElcoreStore</a>
+              </li>
+              <li class="footer__col-list-item">
+                <a href="/">ElcoreCloud</a>
+              </li>
+              <li class="footer__col-list-item">
+                <a href="/">ElcoreIDE</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h3 class="footer__col-title">Обучение и ресурсы</h3>
+            <ul class="footer__col-list">
+              <li class="footer__col-list-item">
+                <a href="/">Что такое ElcorePLC</a>
+              </li>
+              <li class="footer__col-list-item">
+                <a href="/">Документация</a>
+              </li>
+              <li class="footer__col-list-item">
+                <a href="/">Обучающие материалы</a>
+              </li>
+              <li class="footer__col-list-item">
+                <a href="/">Примеры использования</a>
+              </li>
+              <li class="footer__col-list-item">
+                <a href="/">База знаний</a>
+              </li>
+            </ul>
+          </div>
+
+
+          <div class="footer__col">
+            <button class="footer__col-btn btn btn--transparent">Личный кабинет</button>
+            <ul class="footer__col-list">
+              <li class="footer__col-list-item">
+                <a href="/">Контакты</a>
+              </li>
+              <li class="footer__col-list-item">
+                <a href="/">Новости и статья</a>
+              </li>
+              <li class="footer__col-list-item">
+                <a href="/">Сообщества (Форум)</a>
+              </li>
+              <li class="footer__col-list-item">
+                <a href="/">Тех поддержка</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="footer__bottom-cont">
+        <ul class="social">
+          <li>
+            <a href="https://web.telegram.org/" target="_blank">
+              <svg class="social__icon social__icon--blue" width="21" height="17" viewBox="0 0 21 17" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.6128 16.7382C15.4524 16.6518 14.336 15.8585 13.132 14.9754C11.9279 14.0922 10.8885 13.3696 10.8223 13.3696C10.756 13.3696 10.1329 13.9086 9.43751 14.5673C8.53805 15.4193 8.109 15.779 7.9507 15.8136C7.82832 15.8403 7.70256 15.8355 7.67123 15.8028C7.63991 15.7701 7.6879 14.7098 7.77789 13.4465C7.93529 11.2369 7.94771 11.1438 8.10493 10.9944C8.19482 10.909 10.0999 9.19804 12.3385 7.19225C14.577 5.18646 16.482 3.46581 16.5716 3.36859C16.7201 3.20762 16.7248 3.18197 16.624 3.08172C16.5336 2.99177 16.4751 2.98598 16.3045 3.05008C16.1896 3.09322 13.683 4.63949 10.7343 6.48624C7.78553 8.33298 5.33435 9.84395 5.28718 9.84395C5.08277 9.84395 0.46211 8.36478 0.303571 8.24859C0.0684226 8.07626 -0.0477458 7.83328 0.0183926 7.65213C0.132554 7.33944 0.640217 7.07571 2.48239 6.37208C3.5033 5.98214 5.807 5.09966 7.60171 4.41101C19.0245 0.0279718 19.0995 0 19.429 0C19.8259 0 20.1102 0.24411 20.2304 0.688156C20.3293 1.05341 20.3846 0.758231 19.005 7.22588C18.7511 8.41623 18.2267 10.8792 17.8397 12.6992C17.4527 14.5192 17.0873 16.1294 17.0277 16.2775C16.7872 16.8756 16.2141 17.0622 15.6128 16.7382V16.7382Z"
+                  fill="#5B5B5B" />
+              </svg>
+
+            </a>
+          </li>
+
+          <li>
+            <a href="https://dzen.ru/" target="_blank">
+              <svg class="social__icon social__icon--black" width="18" height="17" viewBox="0 0 18 17" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_82_241)">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8.61709 0C5.13235 0 2.7388 0 1.50682 1.23198C0.274841 2.46395 0.274841 4.99831 0.274841 8.34225C4.00597 8.23665 5.73074 8.13105 7.10352 6.79347C8.40589 5.4559 8.51149 3.73113 8.61709 0Z"
+                    fill="#5B5B5B" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M1.50682 15.6637C0.274841 14.4317 0.274841 11.8974 0.274841 8.55344C4.00597 8.65903 5.73074 8.76463 7.10352 10.1022C8.44109 11.475 8.54669 13.1645 8.65229 16.9309C5.13235 16.8957 2.7388 16.8957 1.50682 15.6637Z"
+                    fill="#5B5B5B" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8.82831 16.8957C8.93391 13.1646 9.0395 11.4398 10.3771 10.067C11.7499 8.72945 13.4394 8.62385 17.2058 8.51825C17.2058 11.8974 17.2058 14.3965 15.9738 15.6637C14.7066 16.8957 12.313 16.8957 8.82831 16.8957Z"
+                    fill="#5B5B5B" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8.82831 0C8.93391 3.73113 9.0395 5.4559 10.3771 6.82867C11.7499 8.16625 13.4394 8.27185 17.2058 8.37745C17.2058 4.99831 17.2058 2.49915 15.9738 1.23198C14.7066 0 12.313 0 8.82831 0Z"
+                    fill="#5B5B5B" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_82_241">
+                    <rect width="16.8957" height="16.8957" fill="white" transform="translate(0.274841)" />
+                  </clipPath>
+                </defs>
+              </svg>
+
+
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.youtube.ru" target="_blank">
+              <svg class="social__icon social__icon--red" width="19" height="15" viewBox="0 0 19 15" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.3679 2.80493C18.1535 1.97071 17.524 1.316 16.7244 1.09425C15.2749 0.689453 9.46316 0.689453 9.46316 0.689453C9.46316 0.689453 3.65144 0.689453 2.20191 1.09425C1.40229 1.316 0.772801 1.97071 0.558434 2.80493C0.170532 4.31499 0.170532 7.46181 0.170532 7.46181C0.170532 7.46181 0.170532 10.6086 0.558434 12.1187C0.772801 12.9494 1.40229 13.5795 2.20191 13.8012C3.65144 14.206 9.46316 14.206 9.46316 14.206C9.46316 14.206 15.2749 14.206 16.7244 13.8012C17.524 13.5795 18.1535 12.9494 18.3679 12.1187C18.7558 10.6086 18.7558 7.46181 18.7558 7.46181C18.7558 7.46181 18.7558 4.31147 18.3679 2.80493ZM7.56108 10.32V4.60362L12.4167 7.46181L7.56108 10.32Z"
+                  fill="#5B5B5B" />
+              </svg>
+
+
+            </a>
+          </li>
+
+          <li>
+            <a href="https://vk.com/" target="_blank">
+              <svg class="social__icon social__icon--blue" width="18" height="17" viewBox="0 0 18 17" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M6.61032 0H11.797C16.5306 0 17.6515 1.12086 17.6515 5.85453V11.0412C17.6515 15.7748 16.5306 16.8957 11.797 16.8957H6.61032C1.87666 16.8957 0.755798 15.7748 0.755798 11.0412V5.85453C0.755798 1.12086 1.87666 0 6.61032 0ZM14.5871 5.81871C14.6706 5.55632 14.5871 5.36556 14.2174 5.36556H12.9893C12.6794 5.36556 12.5363 5.53249 12.4529 5.71142C12.4529 5.71142 11.8208 7.23761 10.9385 8.22736C10.6523 8.5134 10.5212 8.60886 10.3662 8.60886C10.2828 8.60886 10.1755 8.5134 10.1755 8.25118V5.80671C10.1755 5.49684 10.08 5.35374 9.81763 5.35374H7.88612C7.69536 5.35374 7.57608 5.49684 7.57608 5.63978C7.57608 5.93799 8.01723 6.00946 8.06487 6.84411V8.65651C8.06487 9.05001 7.9934 9.12148 7.83847 9.12148C7.42115 9.12148 6.40758 7.58346 5.7995 5.8307C5.68022 5.48485 5.56093 5.35374 5.2509 5.35374H4.01092C3.65324 5.35374 3.5936 5.52067 3.5936 5.69942C3.5936 6.02145 4.01092 7.64293 5.53711 9.78919C6.55068 11.2559 7.9934 12.0427 9.29302 12.0427C10.08 12.0427 10.1755 11.864 10.1755 11.5659V10.4569C10.1755 10.0992 10.247 10.0396 10.4973 10.0396C10.6761 10.0396 10.9981 10.135 11.7255 10.8386C12.5601 11.6732 12.7032 12.0547 13.1682 12.0547H14.3964C14.754 12.0547 14.921 11.8758 14.8257 11.5301C14.7184 11.1843 14.3129 10.6835 13.7883 10.0874C13.5021 9.75354 13.0729 9.38387 12.9416 9.20494C12.7629 8.96654 12.8105 8.87108 12.9416 8.65651C12.9298 8.65651 14.4322 6.53407 14.5871 5.81871Z"
+                  fill="#5B5B5B" />
+              </svg>
+
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer__bottom-list">
+          <li class="footer__bottom-list-item">
+            <a href="/"> Политика конфиденциальности</a>
+          </li>
+
+          <li class="footer__bottom-list-item">
+            <a href="/"> Карта сайта</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+	<script src="./js/wow.min.js"></script>
+	<script src="./js/index.bundle.js"></script>
+
+</body>
+
+</html>

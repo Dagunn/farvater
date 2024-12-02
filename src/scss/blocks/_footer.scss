@@ -1,0 +1,156 @@
+.footer {
+  color: var(--white);
+
+  &__box {
+    background-color: var(--black);
+    padding: 75px 0 100px;
+
+    @media (width<=768px) {
+      padding: 75px 0 75px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 60px 10px;
+
+    @media (width<=1120px) {
+      justify-content: center;
+    }
+
+    @media (width<=840px) {
+      text-align: center;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 28px;
+    display: inline-block;
+  }
+
+  &__process {
+    font-weight: 700;
+    margin-bottom: 13px;
+    line-height: 1.6;
+  }
+
+  &__download {
+    margin-bottom: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--grey-border);
+    padding: 7px 45px 7px 11px;
+    max-width: 155px;
+    justify-content: center;
+    column-gap: 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s, border-color 0.3s;
+
+    @media (width<=1120px) {
+      margin: 0 auto 30px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--green-hover);
+        border-color: var(--green-hover);
+      }
+    }
+  }
+
+  &__policy {
+    font-weight: 700;
+  }
+
+  &__left {
+    max-width: 271px;
+
+    @media (width<=1120px) {
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__right {
+    display: flex;
+    column-gap: 120px;
+    flex-wrap: wrap;
+
+    @media (width<=840px) {
+      justify-content: center;
+      flex-direction: column;
+      row-gap: 40px;
+    }
+  }
+
+  &__col {
+    &-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--grey);
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 18px;
+
+      &-item {
+        transition: opacity 0.2;
+
+        @media (hover: hover) {
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+
+    &-btn {
+      margin-bottom: 26px;
+    }
+  }
+
+  &__bottom {
+    background-color: var(--dark);
+    padding: 30px 0;
+
+    &-cont {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+
+      @media (width<=565px) {
+        justify-content: center;
+      }
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 22px;
+      color: var(--grey-light);
+      font-size: 16px;
+      line-height: 1.6;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &-item {
+        transition: opacity 0.2s;
+
+        @media (hover: hover) {
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}
